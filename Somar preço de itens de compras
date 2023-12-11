@@ -1,0 +1,30 @@
+while True:
+    # Inicializa o total da compra
+    total_compra = 0
+
+    # Loop para adicionar itens à lista de compras
+    while True:
+        # Solicita ao usuário o nome do item
+        item_nome = input("Digite o nome do item (ou 'fim' para encerrar): ")
+
+        # Verifica se o usuário deseja encerrar a lista de compras
+        if item_nome.lower() == 'fim':
+            break
+
+        # Solicita ao usuário o preço do item
+        try:
+            item_preco = float(input("Digite o preço do item: "))
+        except ValueError:
+            print("Por favor, digite um valor numérico para o preço.")
+            continue
+
+        # Adiciona o preço do item ao total da compra
+        total_compra += item_preco
+
+    # Exibe o total da compra
+    print(f"\nTotal da compra: R${total_compra:.2f}")
+
+    # Pergunta ao usuário se deseja continuar
+    continuar = input("Deseja fazer outra compra? (Digite 's' para sim ou 'n' para não): ")
+    if continuar.lower() != 's':
+        break  # Encerra o programa se o usuário não quiser continuar
